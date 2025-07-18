@@ -1,78 +1,91 @@
-Gesture Controlled PowerPoint Navigation
 
-🚀 A touchless system to navigate PowerPoint slides using hand gestures detected from your webcam.
+# Gesture Controlled PowerPoint Navigation
 
-✨ Features
+🚀 **A touchless system to navigate PowerPoint slides using hand gestures detected from your webcam.**
 
-Real-Time Gesture Detection
+---
+
+## ✨ Features
+
+### ✅ Real-Time Gesture Detection
 
 Detects:
 
-✋ Palm: Start slideshow
+- ✋ **Palm**: Start slideshow
+- ✊ **Fist**: End slideshow
+- ☝️ **One finger**: Next slide
+- ✌️ **Two fingers**: Previous slide
 
-✊ Fist: End slideshow
+---
 
-☝️ One finger: Next slide
+### ✅ PowerPoint Control
 
-✌️ Two fingers: Previous slide
+Uses **pywin32 COM** to automate:
 
-PowerPoint Control
+- Starting slideshow
+- Ending slideshow
+- Moving to next or previous slides
 
-Uses pywin32 COM to automate:
+---
 
-Starting slideshow
-
-Ending slideshow
-
-Moving to next or previous slides
-
-System Tray Integration
+### ✅ System Tray Integration
 
 Runs silently with tray options:
 
-Show/hide camera preview
+- Show/hide camera preview
+- View gesture reference
+- About window
+- Exit application
 
-View gesture reference
+---
 
-About window
+### ✅ Hold Confirmation
 
-Exit application
+Gesture must be **held for 2 seconds** to avoid accidental triggers.
 
-Hold Confirmation
+---
 
-Gesture must be held for 2 seconds to avoid accidental triggers.
+## 🛠 Installation
 
-🛠 Installation
+### 1. Clone the Repository
 
-1. Clone the Repository
-
+```bash
 git clone https://github.com/Nithish-Bathila/gesture-controlled-presentation.git
 cd gesture-controlled-presentation
+```
 
-2. Create Virtual Environment & Install Dependencies
+---
 
+### 2. Create Virtual Environment & Install Dependencies
+
+```bash
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-🎮 Usage
+---
 
-Ensure PowerPoint is open with your presentation.
+## 🎮 Usage
 
-Run:
+1. **Ensure PowerPoint is open** with your presentation.  
+2. Run:
 
+```bash
 python main.py
+```
 
-The app will:
+✅ The app will:
 
-Start webcam and detect gestures.
+- Start webcam and detect gestures.
+- Control PowerPoint slides accordingly.
+- Show a **system tray icon** for controls.
 
-Control PowerPoint slides accordingly.
+---
 
-Show a system tray icon for controls.
+## 📂 Project Structure
 
-📂 Project Structure
-
+```
 main.py                 # Entry point with system tray integration
 controller.py           # PowerPoint control module (pywin32)
 gesture_detector.py     # Gesture detection module (MediaPipe)
@@ -81,25 +94,25 @@ icon.png / icon.ico     # Application icons
 install_script.iss      # Inno Setup installer script
 requirements.txt        # Python dependencies
 .gitignore
+```
 
-💻 Technologies Used
+---
 
-Python 3.11
+## 💻 Technologies Used
 
-OpenCV
+- **Python 3.11**
+- **OpenCV**
+- **MediaPipe**
+- **pywin32**
+- **pystray**
+- **tkinter**
 
-MediaPipe
+---
 
-pywin32
+## ⚠️ Limitations
 
-pystray
+- Requires good lighting for accurate detection.
+- Only supports **right hand gestures** as implemented.
+- Works on **Windows only** due to PowerPoint COM integration.
 
-tkinter
-
-⚠️ Limitations
-
-Requires good lighting for accurate detection.
-
-Only supports right hand gestures as implemented.
-
-Works on Windows only due to PowerPoint COM integration.
+---
